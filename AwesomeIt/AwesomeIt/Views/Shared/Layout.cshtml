@@ -1,0 +1,79 @@
+﻿@model AwesomeIt.Models.BaseModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.MetaTitle</title>
+    <meta name="description" content="@Model.MetaDescription" />
+    <meta name="keywords" content="@Model.MetaKeywords" />
+
+    <link href="~/Content/Reset.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/"><img src="~/Content/Images/awesome_logo.jpg" /></a>
+            <nav>
+                <ul>
+                    @foreach (var item in Model.MainMenuUrls)
+                    {
+                        <li>
+                            <a href="@item.Url">@item.Name</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="left sidebar">
+            <h2>Igangværende projekter</h2>
+            <ul>
+                @foreach (var item in Model.SideMenuUrls)
+                {
+                    <li>
+                        <a href="@item.Url ">@item.Name</a>
+                    </li>
+                }
+            </ul>
+
+            <h2>Nyeste aktiviterer</h2>
+            <ul>
+                @foreach (var item in Model.SideMenuUrls)
+                {
+                    <li>
+                        <a href="@item.Url ">@item.Name</a>
+                    </li>
+                }
+            </ul>
+
+            <h2>Arkiverede projekter</h2>
+            <ul>
+                @foreach (var item in Model.SideMenuUrls)
+                {
+                    <li>
+                        <a href="@item.Url ">@item.Name</a>
+                    </li>
+                }
+            </ul>
+
+
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="clear"></div>
+    <footer>
+        <p>Copyright Awesome IT 2013 - Contact: support@awesomeIt.com</p>
+    </footer>
+</body>
+</html>

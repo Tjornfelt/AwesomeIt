@@ -1,0 +1,126 @@
+$primary-color: #333;
+$secondary-color: #f0f0f0;
+$tertiary-color: #d0d0d0;
+body
+{
+background: gray;
+font-family: arial;
+color: $primary-color;
+}
+
+header {
+	height: 200px;
+	background: black;
+	.header-content
+	{
+		width: 960px;
+		margin: 0 auto;
+		img {
+			height: 200px;
+			float: left;
+		}
+		nav {
+			ul {
+				float: right;
+				margin-right: 20px;
+				margin-top: 170px;
+				li {
+					display: inline;
+					margin-left: 30px;
+					a {
+						color: white;
+						font-weight: bold;
+						text-decoration: none;
+						&:hover {text-decoration: underline;}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+footer {
+	height: 80px;
+	p {
+		padding-top: 10px;
+		text-align: center;
+	}
+}
+
+.content-wrapper {
+	width: 930px;
+	margin: 0 auto;
+	overflow: hidden;
+	background: white;
+	padding: 0 10px 0 0;
+
+}
+
+.left.sidebar {
+	padding: 10px;
+	float: left;
+	width: 180px;
+	margin-right: 20px;
+	min-height: 500px;
+	overflow: hidden;
+	background: #f0f0f0;
+	h2 {
+		font-weight: bold;
+		padding-bottom: 10px;
+	}
+	ul {
+		margin-bottom: 30px;
+		border-bottom: 1px solid $primary-color;
+		padding-bottom: 10px;
+	}
+	
+}
+
+.content {
+	float: left;
+	width: 700px;
+	min-height: 500px;
+	overflow: hidden;
+	h1 {
+		padding: 10px 0 20px 0;
+		font-size: 48px;
+		font-weight: bold;
+	}
+	.box {
+		cursor: pointer;
+		position: relative;
+		margin-top: 20px;
+		width: 290px;
+		height: 80px;
+		padding: 20px;
+		border-radius: 10px;
+		background: $secondary-color;
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+		margin-right: 20px;
+		float: left;
+		.box-content {
+			width: 250px;
+			h3 {
+				font-size: 18px;
+				font-weight: bold;
+			}
+		}
+		span {
+			position: absolute;
+			top: 0;
+			right: 15px;
+			font-size: 80px;
+			color: green;
+		}
+		&:hover {
+			box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+			background: $tertiary-color;
+		}
+		
+	}
+}
+
+.clear {
+	clear: both;
+}
