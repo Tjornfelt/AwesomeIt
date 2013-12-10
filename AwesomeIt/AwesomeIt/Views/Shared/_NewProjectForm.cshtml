@@ -1,0 +1,9 @@
+﻿@model AwesomeIt.Models.NewProjectForm
+
+@using (Html.BeginForm("newproject", "projects", FormMethod.Get))
+{
+    @Html.LabelFor(m => m.ProjectName)
+    @Html.TextBoxFor(m => m.ProjectName)
+
+    <input type="submit" value="Opret" />
+}

@@ -1,0 +1,13 @@
+﻿@using AwesomeIt.Helpers;
+@model AwesomeIt.Models.NewProjectModel
+@{
+    Layout = FilePathHelpers.GetLayout();
+}
+
+<h1>@Model.Header</h1>
+<p>@Html.Raw(Model.BodyText)</p>
+
+@if(Model.NewProjectForm != null)
+{
+    @Html.Partial("_NewProjectForm", Model.NewProjectForm)
+}

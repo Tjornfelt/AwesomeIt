@@ -35,37 +35,41 @@
 
     <div class="content-wrapper">
         <div class="left sidebar">
-            <h2>Igangværende projekter</h2>
-            <ul>
-                @foreach (var item in Model.SideMenuUrls)
-                {
-                    <li>
-                        <a href="@item.Url ">@item.Name</a>
-                    </li>
-                }
-            </ul>
 
-            <h2>Nyeste aktiviterer</h2>
-            <ul>
-                @foreach (var item in Model.SideMenuUrls)
-                {
-                    <li>
-                        <a href="@item.Url ">@item.Name</a>
-                    </li>
-                }
-            </ul>
+            @if(Model.ActiveProjects.Any())
+            {
+                <h2>Igangværende projekter</h2>
+                <ul>
+                    @foreach (var item in Model.ActiveProjects)
+                    {
+                        <li>
+                            <a href="@item.Url">@item.Name</a>
+                        </li>
+                    }
+                </ul>
+            }
 
-            <h2>Arkiverede projekter</h2>
-            <ul>
-                @foreach (var item in Model.SideMenuUrls)
-                {
-                    <li>
-                        <a href="@item.Url ">@item.Name</a>
-                    </li>
-                }
-            </ul>
-
-
+            @if(Model.ArchivedProjects.Any())
+            {
+                <div class="foldable">
+                    <div class="show">
+                        <h2><span class="green">+</span> Arkiverede projekter</h2>
+                    </div>
+                    <div class="hide">
+                        <h2><span class="red">-</span> Arkiverede projekter</h2>
+                    </div>
+                    <div class="foldable-content">
+                        <ul>
+                            @foreach (var item in Model.ArchivedProjects)
+                            {
+                                <li>
+                                    <a href="@item.Url">@item.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
         </div>
         <div class="content">
             @RenderBody()
@@ -75,5 +79,8 @@
     <footer>
         <p>Copyright Awesome IT 2013 - Contact: support@awesomeIt.com</p>
     </footer>
+
+    <script src="~/Scripts/jquery-2.0.3.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
 </body>
 </html>

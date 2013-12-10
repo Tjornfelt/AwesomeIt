@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AwesomeIt.Helpers;
 using AwesomeIt.Models;
 
 namespace AwesomeIt.Controllers
@@ -15,10 +16,29 @@ namespace AwesomeIt.Controllers
             model.MetaDescription = "This is the description!";
             model.MetaKeywords = "These, are, the, keywords!";
 
-            model.SideMenuUrls = PopulateSideMenu();
+            model.ActiveProjects = PopulateProjects(false);
+            model.ArchivedProjects = PopulateProjects(true);
             model.MainMenuUrls = PopulateMainMenu();
 
             return View(model);
+        }
+
+        public IEnumerable<Link> PopulateProjects(bool archived)
+        {
+            var projects = XMLHelpers.GetAllProjects();
+
+            List<Link> links = new List<Link>();
+            foreach (var item in projects.Where(x => x.Archived == archived))
+            {
+                Link link = new Link()
+                {
+                    Name = item.ProjectName,
+                    Url = "/projects/project/" + item.ProjectName
+                };
+                links.Add(link);
+            }
+
+            return links;
         }
 
         public IEnumerable<Link> PopulateSideMenu()

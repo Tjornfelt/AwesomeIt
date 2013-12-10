@@ -11,7 +11,8 @@ namespace AwesomeIt.Models
         public string MetaKeywords { get; set; }
         public string MetaDescription { get; set; }
 
-        public IEnumerable<Link> SideMenuUrls { get; set; }
+        public IEnumerable<Link> ActiveProjects { get; set; }
+        public IEnumerable<Link> ArchivedProjects { get; set; }
         public IEnumerable<Link> MainMenuUrls { get; set; }
     }
 }

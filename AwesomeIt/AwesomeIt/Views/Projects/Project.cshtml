@@ -1,0 +1,42 @@
+﻿@using AwesomeIt.Helpers;
+@model AwesomeIt.Models.ProjectModel
+@{
+    
+    Layout = FilePathHelpers.GetLayout();
+}
+
+
+<h1>@Model.ProjectName</h1>
+
+
+
+<div class="box">
+    <div class="box-content">
+        <h3>Ny diskussion</h3>
+        <p>Opret en ny diskussion</p>
+    </div>
+    <span>+</span>
+</div>
+
+<div class="box">
+    <div class="box-content">
+        <h3>Ny to-do-list</h3>
+        <p>Opret en ny to-do-list</p>
+    </div>
+    <span>+</span>
+</div>
+
+<div class="box">
+    <div class="box-content">
+        <h3>Tilføj personer</h3>
+        <p>Tilføj personer til projektet</p>
+    </div>
+    <span>+</span>
+</div>
+
+@if(!Model.Archived)
+{
+<div class="clear">
+    @Html.ActionLink("Arkiver","archive/"+Model.ProjectName)
+</div>
+}

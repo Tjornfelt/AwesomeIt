@@ -8,6 +8,25 @@ font-family: arial;
 color: $primary-color;
 }
 
+.red { color: red; }
+.green { color: green; }
+
+.foldable{
+	h2 {
+		span {font-size: 22px;}
+	}
+	.hide{
+		display: none;
+		cursor: pointer;
+	}
+	.show{
+		cursor: pointer;
+	}
+	.foldable-content {
+		display: none;
+	}
+}
+
 header {
 	height: 200px;
 	background: black;
@@ -67,7 +86,7 @@ footer {
 	background: #f0f0f0;
 	h2 {
 		font-weight: bold;
-		padding-bottom: 10px;
+		margin-bottom: 10px;
 	}
 	ul {
 		margin-bottom: 30px;
@@ -90,7 +109,8 @@ footer {
 	.box {
 		cursor: pointer;
 		position: relative;
-		margin-top: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		width: 290px;
 		height: 80px;
 		padding: 20px;

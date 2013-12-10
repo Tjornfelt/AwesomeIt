@@ -14,7 +14,7 @@ namespace AwesomeIt.Controllers
         {
             var model = new FrontpageModel();
             model.Header = "Kontrolpanel";
-            model.BodyText = "Velkommen  til Awesome IT's projektstyringsværktøj. Til venstre kan du se en liste over alle oprettede projekter. Herunder kan du oprette nye projekter";
+            model.BodyText = "Velkommen  til Awesome IT's projektstyringsværktøj. Til venstre kan du se en liste over alle oprettede projekter. Du kan også se en liste over arkiverede projekter, ved at klikke på \"Arkiverede Projekter\". Herunder kan du oprette nye projekter";
 
             //Return the model to the Index method of the inherited class (BaseController). From there, we will set base values into the model
             //and return the result to the view. The view will still use the "Frontpage" from this controller. 

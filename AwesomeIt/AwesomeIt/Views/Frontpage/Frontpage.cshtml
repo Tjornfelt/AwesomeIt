@@ -7,13 +7,20 @@
 <h1>@Model.Header</h1>
 <p>@Model.BodyText</p>
 
+@*Blocks inside inline will not validate - the link should either:
+1) Be set as a click event using a script
+2) Be set inside each block element
+3) Every element inside the a should be inline element
+*@
+<a href="/projects/newproject">
 <div class="box">
     <div class="box-content">
         <h3>Nyt projekt</h3>
-        <p>Opret et nyt projekt og inviter folk til projektet</p>
+        <p>Opret et nyt blankt projekt</p>
     </div>
     <span>+</span>
 </div>
+</a>
 
 <div class="box">
     <div class="box-content">
